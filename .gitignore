@@ -5,6 +5,15 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+# Eclipse settings files
+HelloWorld/.settings
+HelloWorld/.classpath
+HelloWorld/.project
+HelloWorld/bin
+
+# Maven files
+HelloWorld/target
+ 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 

@@ -20,17 +20,27 @@
 			<artifactId>gson</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
+					<mainClass>com.epam.json.main.Main</mainClass>
 					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
+        			<target>1.7</target>
+			</configuration>
 			</plugin>
 		</plugins>
 	</build>

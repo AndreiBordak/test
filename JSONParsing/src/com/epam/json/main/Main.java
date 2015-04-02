@@ -15,10 +15,20 @@ public class Main {
 
 	public static void main(String[] args) {
 
+
+
 		ArcService client = new ArcService();
 		Docs docs = null;
 
-		client.setId("28559cca-6ac6-4e32-880c-1c531805fd1e");
+
+
+		if(args.length!=0&&args[0]!=null&&!args[0].isEmpty()){
+
+			client.setId(args[0]);
+		}else{
+			client.setId("28559cca-6ac6-4e32-880c-1c531805fd1e");
+		}
+
 
 		try {
 			docs = new JsonService().parse(client.getResponseContent());

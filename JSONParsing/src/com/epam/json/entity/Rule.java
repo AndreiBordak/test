@@ -73,6 +73,15 @@ public class Rule extends Item {
 		@SerializedName(Schema.VALUE)
 		private String value;
 
+		public String toHtml(){
+			StringBuilder sb = new StringBuilder();
+			sb.append("<ul>");
+			sb.append("<li>" + "key   ---" +key + "</li>");
+			sb.append("<li>" + "value   ---" +value+ "</li>");
+			sb.append("</ul>");
+			return sb.toString();
+		}
+
 	}
 
 	@Override
@@ -127,6 +136,19 @@ public class Rule extends Item {
 			return false;
 		}
 		return true;
+	}
+
+	public String toHtml() {
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("ruleMap");
+		for (RuleMap ruleMap : this.ruleMap) {
+			sb.append("<ul>");
+			sb.append("<li>" + "---" + ruleMap.toHtml() + "</li>");
+			sb.append("</ul>");
+		}
+
+		return sb.toString();
 	}
 
 }

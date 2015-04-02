@@ -52,7 +52,19 @@ public class Condition extends Item {
 		return true;
 	}
 
-
-
+	public String toHtml() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("<h3>ruleSet</h3>");
+		for (Rule rule : ruleSet) {
+			sb.append("<h3>" + rule.getTitle() + "</h3>");
+			sb.append("<ul>");
+			sb.append("<li>" + "mtvi:id      ---" + rule.getMtviId() + "</li>");
+			sb.append("<li>" + "mtvi:shortId ---" + rule.getMtviShortId()
+					+ "</li>");
+			sb.append("<li>" + rule.toHtml()+"</li>");
+			sb.append("</ul>");
+		}
+		return sb.toString();
+	}
 
 }

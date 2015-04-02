@@ -36,5 +36,21 @@ public class Docs {
 	}
 
 
+	public String toHtml(){
+		StringBuilder sb = new StringBuilder();
+
+		for (Brand brand: brands){
+			sb.append("<h1>"+brand.getTitle()+"</h1>");
+			sb.append("<ul>");
+			sb.append("<li>"+"mtvi:id      ---"+brand.getMtviId()+"</li>");
+			sb.append("<li>"+"mtvi:shortId ---"+brand.getMtviShortId()+"</li>");
+			sb.append("<li>"+brand.toHtml()+"</li>");
+			sb.append("</ul>");
+
+		}
+
+		return sb.toString();
+	}
+
 
 }

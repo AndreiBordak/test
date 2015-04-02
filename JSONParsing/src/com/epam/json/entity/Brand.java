@@ -82,13 +82,25 @@ public class Brand extends Item {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-
-
-
 		return builder.toString();
 	}
 
+	public String toHtml() {
+		StringBuilder sb = new StringBuilder();
 
+		for (Condition condition : conditions) {
 
+			sb.append("<h2>" + condition.getTitle() + "</h2>");
+			sb.append("<ul>");
+			sb.append("<li>" + "mtvi:id      ---" + condition.getMtviId()
+					+ "</li>");
+			sb.append("<li>" + "mtvi:shortId ---" + condition.getMtviShortId()
+					+ "</li>");
+			sb.append("<li>" + condition.toHtml() + "</li>");
+			sb.append("</ul>");
+		}
+
+		return sb.toString();
+	}
 
 }

@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import com.epam.json.entity.Docs;
 import com.epam.json.exception.ArcServiceException;
 import com.epam.json.parsing.JsonService;
+import com.epam.json.utils.HtmlUtils;
 import com.epam.json.web.ArcService;
 
 public class Main {
@@ -39,6 +40,8 @@ public class Main {
 		if (docs != null) {
 			System.out.println(docs.toString());
 		}
+
+		HtmlUtils.writeToHtmlFile(docs.toHtml());
 
 	}
 

@@ -27,7 +27,7 @@ public class Main {
 
 			client.setId(args[0]);
 		}else{
-			client.setId("28559cca-6ac6-4e32-880c-1c531805fd1e");
+			client.setId("1");
 		}
 
 
@@ -39,9 +39,12 @@ public class Main {
 
 		if (docs != null) {
 			System.out.println(docs.toString());
+			HtmlUtils.writeToHtmlFile(docs.toHtml());
+		} else{
+			HtmlUtils.writeToHtmlFile("<h1>No such brands for this ID</h1>");
 		}
 
-		HtmlUtils.writeToHtmlFile(docs.toHtml());
+
 
 	}
 

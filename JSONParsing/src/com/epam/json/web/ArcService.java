@@ -65,8 +65,8 @@ public class ArcService {
 			reader = new InputStreamReader(arcRequest().getEntity()
 					.getContent());
 		} catch (IllegalStateException | IOException e) {
-			throw new ArcServiceException("Cannot get content from arc sevice",
-					e);
+			throw new ArcServiceException(
+					"Can not get content from arc sevice", e);
 		}
 
 		return reader;

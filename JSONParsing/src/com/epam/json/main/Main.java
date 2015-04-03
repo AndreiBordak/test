@@ -21,13 +21,14 @@ public class Main {
 		if (args.length != 0 && args[0] != null && !args[0].isEmpty()) {
 
 			client.setId(args[0]);
-		} else {
-			client.setId("1");
 		}
+
 		try {
 			docs = new JsonService().parse(client.getResponseContent());
-		} catch (ArcServiceException | IOException e) {
+		} catch (ArcServiceException e) {
 			LOGGER.error("Cannot get content from arc service", e);
+		} catch (IOException e) {
+			LOGGER.error("Cannot close reader", e);
 		}
 
 		if (docs != null) {

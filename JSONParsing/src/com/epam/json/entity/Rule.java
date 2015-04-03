@@ -73,11 +73,11 @@ public class Rule extends Item {
 		@SerializedName(Schema.VALUE)
 		private String value;
 
-		public String toHtml(){
+		public String toHtml() {
 			StringBuilder sb = new StringBuilder();
 			sb.append("<ul>");
-			sb.append("<li>" + "key   ---" +key + "</li>");
-			sb.append("<li>" + "value   ---" +value+ "</li>");
+			sb.append("<li>" + "key   ---" + key + "</li>");
+			sb.append("<li>" + "value   ---" + value + "</li>");
 			sb.append("</ul>");
 			return sb.toString();
 		}

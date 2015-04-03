@@ -11,7 +11,6 @@ public abstract class Item {
 	@SerializedName(Schema.MTVI_SHORT_ID)
 	private String mtviShortId;
 
-
 	@SerializedName(Schema.TITLE)
 	private String title;
 
@@ -30,8 +29,6 @@ public abstract class Item {
 	public void setMtviShortId(String mtviShortId) {
 		this.mtviShortId = mtviShortId;
 	}
-
-
 
 	public String getTitle() {
 		return title;
@@ -87,7 +84,5 @@ public abstract class Item {
 		}
 		return true;
 	}
-
-
 
 }

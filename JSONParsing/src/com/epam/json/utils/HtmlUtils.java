@@ -4,18 +4,35 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
+import org.apache.log4j.Logger;
+
 public class HtmlUtils {
 
-	public static final String NO_SUCH_RECORD ="<h1>No such brands for this ID</h1>";
+	private static final Logger LOGGER = Logger.getLogger(HtmlUtils.class);
 
-	public static void writeToHtmlFile(String str){
+	public static final String NO_SUCH_RECORD = "<h1>No such brands for this ID</h1>";
+	public static String FILENAME = "report.html";
+	public static String ENCODING = "UTF-8";
 
-		PrintWriter writer=null;
+	public static void writeToHtmlFile(String str) {
+
+		PrintWriter writer = null;
 		try {
-			writer = new PrintWriter("report.html", "UTF-8");
-		} catch (FileNotFoundException | UnsupportedEncodingException e) {
-
+			writer = new PrintWriter(FILENAME, ENCODING);
+		} catch (FileNotFoundException e) {
+			LOGGER.error(e);
+		} catch (UnsupportedEncodingException e) {
+			LOGGER.error(e);
 		}
+		writer.println(str);
+		writer.close();
+	}
+
+	public static void writeToHtmlFile(String str, String fileName,
+			String encoding) throws FileNotFoundException,
+			UnsupportedEncodingException {
+		PrintWriter writer = null;
+		writer = new PrintWriter(fileName, encoding);
 		writer.println(str);
 		writer.close();
 	}

@@ -61,7 +61,7 @@ public class Condition extends Item {
 			sb.append("<li>" + "mtvi:id      ---" + rule.getMtviId() + "</li>");
 			sb.append("<li>" + "mtvi:shortId ---" + rule.getMtviShortId()
 					+ "</li>");
-			sb.append("<li>" + rule.toHtml()+"</li>");
+			sb.append("<li>" + rule.toHtml() + "</li>");
 			sb.append("</ul>");
 		}
 		return sb.toString();

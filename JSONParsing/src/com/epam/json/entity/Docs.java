@@ -10,7 +10,7 @@ public class Docs {
 	@SerializedName(Schema.DOCS)
 	private List<Brand> brands;
 
-	public Docs(){
+	public Docs() {
 		super();
 	}
 
@@ -22,35 +22,35 @@ public class Docs {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (Brand brand : this.getBrands()) {
-			sb.append(brand.getTitle()+"\n");
+			sb.append(brand.getTitle() + "\n");
 
 			for (Condition con : brand.getContditions()) {
-				sb.append("    " + con.getTitle()+"\n");
+				sb.append("    " + con.getTitle() + "\n");
 
 				for (Rule rule : con.getRule()) {
-					sb.append("           " + rule.getTitle()+"\n");;
+					sb.append("           " + rule.getTitle() + "\n");
+					;
 				}
 			}
 		}
 		return sb.toString();
 	}
 
-
-	public String toHtml(){
+	public String toHtml() {
 		StringBuilder sb = new StringBuilder();
 
-		for (Brand brand: brands){
-			sb.append("<h1>"+brand.getTitle()+"</h1>");
+		for (Brand brand : brands) {
+			sb.append("<h1>" + brand.getTitle() + "</h1>");
 			sb.append("<ul>");
-			sb.append("<li>"+"mtvi:id      ---"+brand.getMtviId()+"</li>");
-			sb.append("<li>"+"mtvi:shortId ---"+brand.getMtviShortId()+"</li>");
-			sb.append("<li>"+brand.toHtml()+"</li>");
+			sb.append("<li>" + "mtvi:id      ---" + brand.getMtviId() + "</li>");
+			sb.append("<li>" + "mtvi:shortId ---" + brand.getMtviShortId()
+					+ "</li>");
+			sb.append("<li>" + brand.toHtml() + "</li>");
 			sb.append("</ul>");
 
 		}
 
 		return sb.toString();
 	}
-
 
 }

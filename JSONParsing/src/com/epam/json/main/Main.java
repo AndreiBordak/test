@@ -16,10 +16,11 @@ public class Main {
 
 	public static void main(String[] args) {
 
+
 		ArcService client = new ArcService();
 		Docs docs = null;
 		if (args.length != 0 && args[0] != null && !args[0].isEmpty()) {
-
+			System.out.println(args[0]);
 			client.setId(args[0]);
 		}
 

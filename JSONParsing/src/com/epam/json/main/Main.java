@@ -8,6 +8,7 @@ import com.epam.json.entity.Docs;
 import com.epam.json.exception.ArcServiceException;
 import com.epam.json.parsing.JsonService;
 import com.epam.json.utils.HtmlUtils;
+import com.epam.json.utils.ObjectFactory;
 import com.epam.json.web.ArcService;
 
 public class Main {
@@ -16,12 +17,13 @@ public class Main {
 
 	public static void main(String[] args) {
 
-
-		ArcService client = new ArcService();
+		ArcService client = ObjectFactory.createInstance(ArcService.class);
 		Docs docs = null;
+
 		if (args.length != 0 && args[0] != null && !args[0].isEmpty()) {
-			System.out.println(args[0]);
 			client.setId(args[0]);
+		} else {
+			client.setId("f18ef4f9-6ff4-4549-a878-bab9b847ae9e");
 		}
 
 		try {
